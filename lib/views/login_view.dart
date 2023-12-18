@@ -1,5 +1,4 @@
-// ignore_for_file: avoid_print
-
+import 'dart:developer' as devtools show log;
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 //import 'package:basic_flutter/firebase_options.dart';
@@ -57,17 +56,23 @@ class _LoginViewState extends State<LoginView> {
               final email = _email.text;
               final password = _password.text;
               try {
-                final userCredential = await FirebaseAuth.instance
-                    .signInWithEmailAndPassword(
-                        email: email, password: password);
-                print(userCredential);
+                final userCredential =
+                    await FirebaseAuth.instance.signInWithEmailAndPassword(
+                  email: email,
+                  password: password,
+                );
+                Navigator.of(context).pushNamedAndRemoveUntil(
+                  '/notes/',
+                  (route) => false,
+                );
               } on FirebaseAuthException catch (e) {
                 if (e.code == 'user-not-found') {
-                  print('user not found');
+                  devtools.log('user not found');
                 } else if (e.code == 'wrong-password') {
-                  print('wrong password');
+                  devtools.log('wrong password');
                 } else if (e.code == 'too-many-requests') {
-                  print('too many request at the moment, try again later');
+                  devtools
+                      .log('too many request at the moment, try again later');
                 }
               }
             },

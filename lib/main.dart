@@ -1,4 +1,3 @@
-// ignore_for_file: avoid_print
 library dart.developer;
 
 import 'dart:math';
@@ -26,6 +25,7 @@ void main() {
       routes: {
         '/login/': (context) => const LoginView(),
         '/register/': (context) => const RegisterView(),
+        '/notes/': (context) => const NotesView(),
       },
     ),
   );
