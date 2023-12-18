@@ -1,5 +1,5 @@
-import 'dart:developer' as devtools show log;
 import 'package:basic_flutter/constans/routes.dart';
+import 'package:basic_flutter/utilities/show_dialog_error.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 //import 'package:basic_flutter/firebase_options.dart';
@@ -68,13 +68,20 @@ class _LoginViewState extends State<LoginView> {
                 );
               } on FirebaseAuthException catch (e) {
                 if (e.code == 'user-not-found') {
-                  devtools.log('user not found');
+                  await showErrorDialog(context, 'user not found');
                 } else if (e.code == 'wrong-password') {
-                  devtools.log('wrong password');
+                  await showErrorDialog(context, 'wrong password');
                 } else if (e.code == 'too-many-requests') {
-                  devtools
-                      .log('too many request at the moment, try again later');
+                  await showErrorDialog(
+                      context, 'Too many request, wait a moment');
+                } else {
+                  await showErrorDialog(context, 'Error: ${e.code}');
                 }
+              } catch (e) {
+                showErrorDialog(
+                  context,
+                  e.toString(),
+                );
               }
             },
             child: const Text('Login'),
