@@ -23,7 +23,7 @@ void main() {
     test('should be able to initialize in less than 2 seconds', () async {
       await provider.initialize();
       expect(provider.isInitialized, true);
-    }, timeout: const Timeout(const Duration(seconds: 2)));
+    }, timeout: const Timeout(Duration(seconds: 2)));
     test('create user should be deligate to login function', () async {
       final badEmailUser = provider.createUser(
           email: 'melody@gmail.com', password: 'password123');
