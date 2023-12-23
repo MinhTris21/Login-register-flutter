@@ -1,9 +1,10 @@
 library dart.developer;
 
-import 'package:basic_flutter/constans/routes.dart';
+import 'package:basic_flutter/constant/routes.dart';
 import 'package:basic_flutter/services/auth/auth_service.dart';
 import 'package:basic_flutter/views/login_view.dart';
-import 'package:basic_flutter/views/notes_view.dart';
+import 'package:basic_flutter/views/notes/new_note_view.dart';
+import 'package:basic_flutter/views/notes/notes_view.dart';
 import 'package:basic_flutter/views/register_view.dart';
 import 'package:basic_flutter/views/verify_email_view.dart';
 import 'package:flutter/material.dart';
@@ -24,6 +25,7 @@ void main() {
         registerRoute: (context) => const RegisterView(),
         notesRoute: (context) => const NotesView(),
         verifyEmailRoute: (context) => const VerifyEmailView(),
+        newNoteRoute: (context) => const NewNoteView(),
       },
     ),
   );

@@ -1,4 +1,4 @@
-import 'package:basic_flutter/constans/routes.dart';
+import 'package:basic_flutter/constant/routes.dart';
 import 'package:basic_flutter/services/auth/auth_service.dart';
 import 'package:flutter/material.dart';
 
