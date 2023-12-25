@@ -1,6 +1,5 @@
 import 'package:basic_flutter/constant/routes.dart';
 import 'package:basic_flutter/services/auth/auth_exceptions.dart';
-import 'package:basic_flutter/services/auth/auth_service.dart';
 import 'package:basic_flutter/services/auth/bloc/auth_bloc.dart';
 import 'package:basic_flutter/services/auth/bloc/auth_event.dart';
 import 'package:basic_flutter/utilities/dialogs/error_dialog.dart';
