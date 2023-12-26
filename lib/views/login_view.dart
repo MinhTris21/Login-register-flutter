@@ -48,46 +48,57 @@ class _LoginViewState extends State<LoginView> {
         appBar: AppBar(
           title: const Text('Login'),
         ),
-        body: Column(
-          children: [
-            TextField(
-              controller: _email,
-              decoration: const InputDecoration(hintText: 'Enter your email'),
-              obscureText: false,
-              enableSuggestions: false,
-              autocorrect: false,
-              keyboardType: TextInputType.emailAddress,
-            ),
-            TextField(
-              controller: _password,
-              decoration:
-                  const InputDecoration(hintText: 'Enter your password'),
-              obscureText: true,
-              enableSuggestions: false,
-              autocorrect: false,
-            ),
-            TextButton(
-              onPressed: () async {
-                final email = _email.text;
-                final password = _password.text;
-                context.read<AuthBloc>().add(
-                      AuthEventLogIn(
-                        email,
-                        password,
-                      ),
-                    );
-              },
-              child: const Text('Login'),
-            ),
-            TextButton(
-              onPressed: () {
-                context.read<AuthBloc>().add(
-                      const AuthEventShouldRegister(),
-                    );
-              },
-              child: const Text('Not register yet, register here!'),
-            )
-          ],
+        body: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Column(
+            children: [
+              TextField(
+                controller: _email,
+                decoration: const InputDecoration(hintText: 'Enter your email'),
+                obscureText: false,
+                enableSuggestions: false,
+                autocorrect: false,
+                keyboardType: TextInputType.emailAddress,
+              ),
+              TextField(
+                controller: _password,
+                decoration:
+                    const InputDecoration(hintText: 'Enter your password'),
+                obscureText: true,
+                enableSuggestions: false,
+                autocorrect: false,
+              ),
+              TextButton(
+                onPressed: () async {
+                  final email = _email.text;
+                  final password = _password.text;
+                  context.read<AuthBloc>().add(
+                        AuthEventLogIn(
+                          email,
+                          password,
+                        ),
+                      );
+                },
+                child: const Text('Login'),
+              ),
+              TextButton(
+                onPressed: () {
+                  context.read<AuthBloc>().add(
+                        const AuthEventForgotPassword(),
+                      );
+                },
+                child: const Text('Forgot password'),
+              ),
+              TextButton(
+                onPressed: () {
+                  context.read<AuthBloc>().add(
+                        const AuthEventShouldRegister(),
+                      );
+                },
+                child: const Text('Not register yet, register here!'),
+              )
+            ],
+          ),
         ),
       ),
     );

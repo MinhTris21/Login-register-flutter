@@ -24,7 +24,7 @@ void main() {
       await provider.initialize();
       expect(provider.isInitialized, true);
     }, timeout: const Timeout(Duration(seconds: 2)));
-    test('create user should be deligate to login function', () async {
+    test('create user should be delegate to login function', () async {
       final badEmailUser = provider.createUser(
           email: 'melody@gmail.com', password: 'password123');
       expect(badEmailUser,
@@ -37,7 +37,7 @@ void main() {
       expect(provider.currentUser, user);
       expect(user.isEmailVerified, false);
     });
-    test('user should recive the email verification ', () {
+    test('user should receive the email verification ', () {
       provider.sendEmailVerification();
       final user = provider.currentUser;
       expect(user, isNotNull);
@@ -105,5 +105,10 @@ class MockAuthProvider implements AuthProvider {
     const newUser = AuthUser(
         id: 'your_id', isEmailVerified: true, email: 'melody@gmail.com');
     _user = newUser;
+  }
+
+  @override
+  Future<void> sendPasswordReset({required String toEmail}) {
+    throw UnimplementedError();
   }
 }
