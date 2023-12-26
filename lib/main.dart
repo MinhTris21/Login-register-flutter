@@ -1,6 +1,7 @@
 library dart.developer;
 
 import 'package:basic_flutter/constant/routes.dart';
+import 'package:basic_flutter/helpers/loading/loading_screen.dart';
 import 'package:basic_flutter/services/auth/bloc/auth_bloc.dart';
 import 'package:basic_flutter/services/auth/bloc/auth_event.dart';
 import 'package:basic_flutter/services/auth/bloc/auth_state.dart';
@@ -40,7 +41,16 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     context.read<AuthBloc>().add(const AuthEventInitialize());
-    return BlocBuilder<AuthBloc, AuthState>(
+    return BlocConsumer<AuthBloc, AuthState>(
+      listener: (context, state) {
+        if (state.isLoading) {
+          LoadingScreen().show(
+              context: context,
+              text: state.loadingText ?? 'Please wait a moment');
+        } else {
+          LoadingScreen().hide();
+        }
+      },
       builder: (context, state) {
         if (state is AuthStateLoggedIn) {
           return const NotesView();
