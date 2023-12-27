@@ -1,3 +1,5 @@
+// ignore_for_file: use_build_context_synchronously
+
 import 'package:basic_flutter/services/auth/bloc/auth_bloc.dart';
 import 'package:basic_flutter/services/auth/bloc/auth_event.dart';
 import 'package:basic_flutter/services/auth/bloc/auth_state.dart';
