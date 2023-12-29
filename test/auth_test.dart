@@ -3,7 +3,7 @@ import 'package:basic_flutter/services/auth/auth_provider.dart';
 import 'package:basic_flutter/services/auth/auth_user.dart';
 import 'package:test/test.dart';
 
-void main() {
+void main() dddd{
   group('Mock Authentication', () {
     final provider = MockAuthProvider();
     test('should not be initialize', () {
