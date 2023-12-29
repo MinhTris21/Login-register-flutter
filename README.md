@@ -1,4 +1,4 @@
-![image](https://github.com/MinhTris21/MOTES-Flutter-dart/assets/105285362/59153ad2-e6c0-4d02-b1d6-c650af9c1e8d)# MOTES Application
+ MOTES Application
 
 
 ## Getting Started
