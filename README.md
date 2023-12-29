@@ -1,6 +1,5 @@
-# basic_flutter
+![image](https://github.com/MinhTris21/MOTES-Flutter-dart/assets/105285362/59153ad2-e6c0-4d02-b1d6-c650af9c1e8d)# MOTES Application
 
-A new Flutter project.
 
 ## Getting Started
 
@@ -8,9 +7,8 @@ This project is a starting point for a Flutter application.
 
 A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+- CRUD note-taking application. Addtional, you can share the notes you have created to your friends via messages or other social platforms.
+- ![image](https://github.com/MinhTris21/MOTES-Flutter-dart/assets/105285362/8a55f8a4-ff10-420a-b44a-eb77fe9808dd)
+- ![image](https://github.com/MinhTris21/MOTES-Flutter-dart/assets/105285362/27467cf5-13ee-4e37-9555-45f4e01b848b)
+- ![image](https://github.com/MinhTris21/MOTES-Flutter-dart/assets/105285362/5b4470ed-b131-49f6-996b-b0be6cf0a549)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
