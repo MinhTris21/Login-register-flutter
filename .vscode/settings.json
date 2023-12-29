@@ -2,5 +2,6 @@
     "cmake.configureOnOpen": false,
     "cSpell.words": [
         "playstore"
-    ]
+    ],
+    "C_Cpp.errorSquiggles": "disabled"
 }
